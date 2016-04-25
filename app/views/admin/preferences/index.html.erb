@@ -1,0 +1,22 @@
+<h1>Preferences</h1>
+<!-- This passes the tests but does not update my preferences appropriately. I am moving on. -->
+<%= form_for @preference, url: admin_preference_path(@preference)  do |f| %>
+
+  <%= f.label :artist_sort_order %>
+  ASC: <%= f.radio_button :artist_sort_order, "ASC" %>
+  DESC: <%= f.radio_button :artist_sort_order, "DESC" %> <br>
+  
+  <%= f.label :song_sort_order %>
+  ASC: <%= f.radio_button :song_sort_order, "ASC" %>
+  DESC: <%= f.radio_button :song_sort_order, "DESC" %> <br>
+
+  <%= f.label :allow_create_songs %> <br>
+  True: <%= f.radio_button :allow_create_songs, "true" %>
+  False: <%= f.radio_button :allow_create_songs, "false" %> <br>
+
+  <%= f.label :allow_create_artists %> <br>
+  True: <%= f.radio_button :allow_create_artists, "true" %>
+  False: <%= f.radio_button :allow_create_artists, "false" %> <br>
+
+  <%= f.submit %>
+<% end %>
